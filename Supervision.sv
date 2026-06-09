@@ -309,7 +309,7 @@ localparam CONF_STR = {
 wire forced_scandoubler;
 // [MiSTer-DB9 BEGIN] - DB9/SNAC8 support: USB-side joystick + joydb mux
 wire [15:0] joystick_0_USB;
-wire [15:0] joystick_0 = joydb_1ena ? (OSD_STATUS ? 16'b0 : joydb_1) : joystick_0_USB;
+wire [15:0] joystick_0 = joydb_1ena ? (OSD_STATUS ? 16'b0 : joydb_1_mapped[15:0]) : joystick_0_USB;
 // [MiSTer-DB9 END]
 wire  [1:0] buttons;
 wire [127:0] status;
